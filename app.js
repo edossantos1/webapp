@@ -6,8 +6,7 @@ function calcul(a, b) {
   return a + b;
 }
 
-app.get('/', (req, res) => {
-  res.send('Hello DevOps - webapp sur Kubernetes ! 2 + 3 = ' + calcul(2, 3));
+app.get('/health', (req, res) => res.status(500).send('KO'));
 });
 
 // Sonde utilisée par Kubernetes (readiness / liveness)
